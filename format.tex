@@ -11,7 +11,7 @@
 \usepackage{titlesec,titletoc}
 \usepackage{indentfirst}
 
-\titleformat{\section}[hang]{\bfseries\Large\color{black}}{\thesection}{1.5ex}{}
+\titleformat{\section}[hang]{\fontsize{14}{18}\selectfont\bfseries\color{black}}{\thesection}{1.5ex}{}
 
 \titlecontents{chapter}[0pt]{\bfseries\color{black}}{\MakeUppercase\chaptername\ \thecontentslabel.\ \MakeUppercase}{\MakeUppercase}{\normalfont\dotfill\bfseries\contentspage}
 
@@ -23,8 +23,8 @@
 \titlecontents{subsubsection}[5ex]{\normalfont\color{black}}{\thecontentslabel\quad}{}{\dotfill\contentspage}
 
 % \titleformat{\subsubsection}[hang]{\normalfont\normalsize\color{black}}{\thesubsubsection}{1.5ex}{}
-\titleformat{\subsection}[hang]{\bfseries\itshape\large\color{black}}{\thesubsection}{1.5ex}{}
-\titleformat{\subsubsection}[hang]{\normalfont\normalsize\color{black}}{\thesubsubsection}{1.5ex}{}
+\titleformat{\subsection}[hang]{\fontsize{14}{18}\selectfont\bfseries\itshape\color{black}}{\thesubsection}{1.5ex}{}
+\titleformat{\subsubsection}[hang]{\fontsize{14}{18}\selectfont\normalfont\color{black}}{\thesubsubsection}{1.5ex}{}
 
 \titlecontents{figure}[0pt]{\color{black}}{\figurename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
 \titlecontents{table}[0pt]{\color{black}}{\tablename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
@@ -87,6 +87,8 @@
   \DeclareDelimFormat[cite]{finalnamedelim}{\space và\space}
   \DeclareDelimFormat[parencite]{finalnamedelim}{\space và\space}
 }
+\DeclareNameWrapperFormat{labelname}{\bibhyperref{#1}}
+
 % Ghi chú: chuẩn kiểu trích dẫn APA 6.x thì phải là kiểu thụt lề treo (hanging indentation), nhưng trong ví dụ của QĐ-TĐT.2284.2020 thì phải thụt dòng đầu tiên.
 \defbibenvironment{bibliography}
   {\list
@@ -102,3 +104,9 @@
 {\list{}{\leftmargin=2cm \rightmargin=0pt}% Lùi lề trái vào đúng 2cm
 \item\relax\itshape} % Ép toàn bộ chữ trong khối này in nghiêng
 {\endlist}
+
+% Tạo lệnh viết chương không đánh số nhưng vẫn tự động chui vào mục lục
+\newcommand{\chapterwithtoc}[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
