@@ -1,0 +1,64 @@
+\usepackage[utf8]{vietnam}
+
+\usepackage[left=3.5cm, right=2cm, top=3.5cm, bottom=3cm]{geometry}
+\usepackage{graphicx,float}
+\usepackage{mathtools}
+\usepackage{amssymb,amsmath}
+\usepackage{mathptmx}       
+\usepackage[varvw]{newtxmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{titlesec,titletoc}
+\titleformat{\section}[hang]{\bfseries\Large\color{black}}{\thesection}{1.5ex}{}
+
+\titlecontents{chapter}[0pt]{\bfseries\color{black}}{\MakeUppercase\chaptername\ \thecontentslabel\quad}{}{\normalfont\dotfill\bfseries\contentspage}
+
+\titlecontents{section}[2.5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+
+\titlecontents{subsection}[5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+
+\titlecontents{figure}[0pt]{\color{black}}{\figurename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
+\titlecontents{table}[0pt]{\color{black}}{\tablename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
+
+\usepackage{enumitem}
+\newlist{abbrv}{itemize}{1}
+\setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
+
+\usepackage[fontsize = 13]{scrextend}
+\usepackage[thmmarks]{ntheorem} 
+
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\newtheorem{definition}{Định nghĩa}[chapter]
+\theorembodyfont{\itshape}
+\newtheorem{theorem}[definition]{Định lí}
+\newtheorem{lemma}[definition]{Bổ đề}
+\newtheorem{corrollary}[definition]{Hệ quả}
+\newtheorem{Proposition}[definition]{Mệnh đề}
+
+\theorembodyfont{\normalfont}
+\newtheorem{example}{Ví dụ}[chapter]
+
+\theoremheaderfont{\itshape}
+\theoremsymbol{\ensuremath{\blacksquare}}
+\newtheorem*{proof}{Chứng minh}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	citecolor=red,
+	urlcolor=black
+}
+
+\renewcommand{\baselinestretch}{1.5} 
+\setlength{\parindent}{0cm}
+\allowdisplaybreaks
+
+\usepackage[labelfont=bf]{caption}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
