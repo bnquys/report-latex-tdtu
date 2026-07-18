@@ -1,5 +1,17 @@
+\titleformat{\chapter}{\Large\bfseries\centering}{\thechapter}{0ex}{\vspace*{-2.5cm}}
+
+% \renewcommand\bibname{DANH MỤC TÀI LIỆU THAM KHẢO}
+% \nocite{*}
+% \printbibliography[heading=bibintoc]
+
 \renewcommand\bibname{DANH MỤC TÀI LIỆU THAM KHẢO}
+\nocite{*}
+\chapter*{\centering \MakeUppercase{\bibname}}
 \addcontentsline{toc}{chapter}{\bibname}
-\begin{thebibliography}{20}
-	\bibitem{1} 
-\end{thebibliography}
+
+\textbf{Tiếng Việt}
+\printbibliography[heading=none, keyword=tiengviet]
+
+\vspace{0.5cm}
+\textbf{Tiếng Anh}
+\printbibliography[heading=none, keyword=tiengnuocngoai]

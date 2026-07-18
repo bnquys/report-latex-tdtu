@@ -34,7 +34,7 @@
 \setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
 
 \usepackage[fontsize = 13]{scrextend}
-\usepackage[thmmarks]{ntheorem} 
+\usepackage[amsmath,thmmarks]{ntheorem}
 
 \theorembodyfont{\normalfont}
 \theoremseparator{.}
@@ -56,7 +56,7 @@
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
-	citecolor=red,
+	citecolor=black,
 	urlcolor=black
 }
 
@@ -67,9 +67,38 @@
 \usepackage[labelfont=bf]{caption}
 \numberwithin{figure}{chapter}
 \numberwithin{table}{chapter}
+\numberwithin{equation}{chapter}
 
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \pagestyle{fancyplain}
 
 \setcounter{tocdepth}{3}\setcounter{secnumdepth}{3}
+
+% Khai báo quản lý tài liệu tham khảo theo chuẩn APA
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{tailieu.bib}
+
+\DefineBibliographyStrings{english}{
+  and = {và},
+  andothers = {và cộng sự},
+}
+\AtBeginDocument{
+  \DeclareDelimFormat[cite]{finalnamedelim}{\space và\space}
+  \DeclareDelimFormat[parencite]{finalnamedelim}{\space và\space}
+}
+% Ghi chú: chuẩn kiểu trích dẫn APA 6.x thì phải là kiểu thụt lề treo (hanging indentation), nhưng trong ví dụ của QĐ-TĐT.2284.2020 thì phải thụt dòng đầu tiên.
+\defbibenvironment{bibliography}
+  {\list
+     {}
+     {\setlength{\leftmargin}{0pt}
+      \setlength{\itemindent}{1.27cm}
+      \setlength{\itemsep}{\bibitemsep}
+      \setlength{\parsep}{\bibparsep}}}
+  {\endlist}
+  {\item}
+
+\newenvironment{doantrichdan}
+{\list{}{\leftmargin=2cm \rightmargin=0pt}% Lùi lề trái vào đúng 2cm
+\item\relax\itshape} % Ép toàn bộ chữ trong khối này in nghiêng
+{\endlist}
