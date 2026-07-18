@@ -9,6 +9,8 @@
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{titlesec,titletoc}
+\usepackage{indentfirst}
+
 \titleformat{\section}[hang]{\bfseries\Large\color{black}}{\thesection}{1.5ex}{}
 
 \titlecontents{chapter}[0pt]{\bfseries\color{black}}{\MakeUppercase\chaptername\ \thecontentslabel.\ \MakeUppercase}{\MakeUppercase}{\normalfont\dotfill\bfseries\contentspage}
@@ -16,6 +18,8 @@
 \titlecontents{section}[2.5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
 
 \titlecontents{subsection}[5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+
+\titleformat{\subsubsection}[hang]{\normalfont\normalsize\color{black}}{\thesubsubsection}{1.5ex}{}
 
 \titlecontents{figure}[0pt]{\color{black}}{\figurename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
 \titlecontents{table}[0pt]{\color{black}}{\tablename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
@@ -52,7 +56,7 @@
 }
 
 \renewcommand{\baselinestretch}{1.5} 
-\setlength{\parindent}{0cm}
+\setlength{\parindent}{1.27cm}
 \allowdisplaybreaks
 
 \usepackage[labelfont=bf]{caption}
