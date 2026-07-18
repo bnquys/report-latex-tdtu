@@ -1,6 +1,6 @@
 \usepackage[utf8]{vietnam}
 
-\usepackage[left=3.5cm, right=2cm, top=3.5cm, bottom=3cm]{geometry}
+\usepackage[left=3.5cm, right=2cm, top=3.5cm, bottom=3cm, headheight=16pt]{geometry}
 \usepackage{graphicx,float}
 \usepackage{mathtools}
 \usepackage{amssymb,amsmath}
@@ -15,10 +15,15 @@
 
 \titlecontents{chapter}[0pt]{\bfseries\color{black}}{\MakeUppercase\chaptername\ \thecontentslabel.\ \MakeUppercase}{\MakeUppercase}{\normalfont\dotfill\bfseries\contentspage}
 
-\titlecontents{section}[2.5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+\titlecontents{section}[0ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
 
-\titlecontents{subsection}[5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+% \titlecontents{subsection}[5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
 
+\titlecontents{subsection}[2.5ex]{\itshape\color{black}}{\thecontentslabel\quad}{}{\dotfill\contentspage}
+\titlecontents{subsubsection}[5ex]{\normalfont\color{black}}{\thecontentslabel\quad}{}{\dotfill\contentspage}
+
+% \titleformat{\subsubsection}[hang]{\normalfont\normalsize\color{black}}{\thesubsubsection}{1.5ex}{}
+\titleformat{\subsection}[hang]{\bfseries\itshape\large\color{black}}{\thesubsection}{1.5ex}{}
 \titleformat{\subsubsection}[hang]{\normalfont\normalsize\color{black}}{\thesubsubsection}{1.5ex}{}
 
 \titlecontents{figure}[0pt]{\color{black}}{\figurename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
@@ -66,3 +71,5 @@
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \pagestyle{fancyplain}
+
+\setcounter{tocdepth}{3}\setcounter{secnumdepth}{3}
