@@ -87,28 +87,6 @@
   \DeclareDelimFormat[cite]{finalnamedelim}{\space và\space}
   \DeclareDelimFormat[parencite]{finalnamedelim}{\space và\space}
 }
-\AtBeginDocument {
-  \DeclareCiteCommand{\cite}
-    {\usebibmacro{cite:init}%
-     \usebibmacro{prenote}}
-    {\printtext[bibhyperref]{\usebibmacro{cite}}}
-    {\multicitedelim}
-    {\usebibmacro{postnote}}
-
-  \DeclareCiteCommand{\parencite}[\mkbibparens]
-    {\usebibmacro{cite:init}%
-         \usebibmacro{prenote}}
-    {\printtext[bibhyperref]{\usebibmacro{cite}}}
-    {\multicitedelim}
-    {\usebibmacro{postnote}}
-
-  \DeclareCiteCommand{\textcite}
-    {\usebibmacro{cite:init}%
-     \usebibmacro{prenote}}
-    {\printtext[bibhyperref]{\usebibmacro{textcite}}}
-    {\multicitedelim}
-    {\usebibmacro{textcite:postnote}}
-}
 
 % Ghi chú: chuẩn kiểu trích dẫn APA 6.x thì phải là kiểu thụt lề treo (hanging indentation), nhưng trong ví dụ của QĐ-TĐT.2284.2020 thì phải thụt dòng đầu tiên.
 \defbibenvironment{bibliography}
