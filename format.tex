@@ -1,6 +1,6 @@
 \usepackage[utf8]{vietnam}
 
-\usepackage[left=3.5cm, right=2cm, top=3.5cm, bottom=3cm]{geometry}
+\usepackage[left=3.5cm, right=2cm, top=3.5cm, bottom=3cm, headheight=16pt]{geometry}
 \usepackage{graphicx,float}
 \usepackage{mathtools}
 \usepackage{amssymb,amsmath}
@@ -9,13 +9,22 @@
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{titlesec,titletoc}
-\titleformat{\section}[hang]{\bfseries\Large\color{black}}{\thesection}{1.5ex}{}
+\usepackage{indentfirst}
 
-\titlecontents{chapter}[0pt]{\bfseries\color{black}}{\MakeUppercase\chaptername\ \thecontentslabel\quad}{}{\normalfont\dotfill\bfseries\contentspage}
+\titleformat{\section}[hang]{\fontsize{14}{18}\selectfont\bfseries\color{black}}{\thesection}{1.5ex}{}
 
-\titlecontents{section}[2.5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+\titlecontents{chapter}[0pt]{\bfseries\color{black}}{\MakeUppercase\chaptername\ \thecontentslabel.\ \MakeUppercase}{\MakeUppercase}{\normalfont\dotfill\bfseries\contentspage}
 
-\titlecontents{subsection}[5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+\titlecontents{section}[0ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+
+% \titlecontents{subsection}[5ex]{\color{black}}{ \thecontentslabel\quad}{}{\dotfill\contentspage}
+
+\titlecontents{subsection}[2.5ex]{\itshape\color{black}}{\thecontentslabel\quad}{}{\dotfill\contentspage}
+\titlecontents{subsubsection}[5ex]{\normalfont\color{black}}{\thecontentslabel\quad}{}{\dotfill\contentspage}
+
+% \titleformat{\subsubsection}[hang]{\normalfont\normalsize\color{black}}{\thesubsubsection}{1.5ex}{}
+\titleformat{\subsection}[hang]{\fontsize{14}{18}\selectfont\bfseries\itshape\color{black}}{\thesubsection}{1.5ex}{}
+\titleformat{\subsubsection}[hang]{\fontsize{14}{18}\selectfont\normalfont\color{black}}{\thesubsubsection}{1.5ex}{}
 
 \titlecontents{figure}[0pt]{\color{black}}{\figurename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
 \titlecontents{table}[0pt]{\color{black}}{\tablename\ \thecontentslabel:\quad}{}{\dotfill\contentspage}
@@ -25,7 +34,7 @@
 \setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
 
 \usepackage[fontsize = 13]{scrextend}
-\usepackage[thmmarks]{ntheorem} 
+\usepackage[amsmath,thmmarks]{ntheorem}
 
 \theorembodyfont{\normalfont}
 \theoremseparator{.}
@@ -47,18 +56,51 @@
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
-	citecolor=red,
+	citecolor=black,
 	urlcolor=black
 }
 
 \renewcommand{\baselinestretch}{1.5} 
-\setlength{\parindent}{0cm}
+\setlength{\parindent}{1.27cm}
 \allowdisplaybreaks
 
 \usepackage[labelfont=bf]{caption}
 \numberwithin{figure}{chapter}
 \numberwithin{table}{chapter}
+\numberwithin{equation}{chapter}
 
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \pagestyle{fancyplain}
+
+\setcounter{tocdepth}{3}\setcounter{secnumdepth}{3}
+
+% Khai báo quản lý tài liệu tham khảo theo chuẩn APA
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{tailieu.bib}
+
+\DefineBibliographyStrings{english}{
+  and = {và},
+  andothers = {và cộng sự},
+}
+\AtBeginDocument{
+  \DeclareDelimFormat[cite]{finalnamedelim}{\space và\space}
+  \DeclareDelimFormat[parencite]{finalnamedelim}{\space và\space}
+}
+
+% Ghi chú: chuẩn kiểu trích dẫn APA 6.x thì phải là kiểu thụt lề treo (hanging indentation), nhưng trong ví dụ của QĐ-TĐT.2284.2020 thì phải thụt dòng đầu tiên.
+\defbibenvironment{bibliography}
+  {\list
+     {}
+     {\setlength{\leftmargin}{0pt}
+      \setlength{\itemindent}{1.27cm}
+      \setlength{\itemsep}{\bibitemsep}
+      \setlength{\parsep}{\bibparsep}}}
+  {\endlist}
+  {\item}
+
+% Tạo lệnh viết chương không đánh số nhưng vẫn tự động chui vào mục lục
+\newcommand{\chapterwithtoc}[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+}
