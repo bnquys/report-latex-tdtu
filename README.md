@@ -7,7 +7,7 @@ This repository is built upon the original **[Master Thesis Template for TDTU ve
 To ensure your document renders perfectly without missing elements, configure your environment with the following settings:
 
 * **Editor online:** [Overleaf](https://overleaf.com)
-* **Compiler:** `pdfLaTeX` set to **Normal mode** (Avoid using Fast or Draft mode)
+* **Compiler:** `pdfLaTeX` set to **Normal mode** (Avoid using Fast[Draft] mode)
 * **TeX Live Version:** 2025
 
 > **Quick Tip:** If your recent edits do not show up in the compiled PDF, your editor might be holding onto old data. Simply clear the cache in the Overleaf menu and recompile the project.
