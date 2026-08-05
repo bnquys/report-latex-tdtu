@@ -4,8 +4,8 @@
 \usepackage{graphicx,float}
 \usepackage{mathtools}
 \usepackage{amssymb,amsmath}
-\usepackage{mathptmx}       
-\usepackage[varvw]{newtxmath}
+\usepackage{mathptmx}
+% \usepackage[varvw]{newtxmath}
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{titlesec,titletoc}
@@ -99,38 +99,8 @@
   {\endlist}
   {\item}
 
-\newenvironment{doantrichdan}
-{\list{}{\leftmargin=2cm \rightmargin=0pt}% Lùi lề trái vào đúng 2cm
-\item\relax\itshape} % Ép toàn bộ chữ trong khối này in nghiêng
-{\endlist}
-
 % Tạo lệnh viết chương không đánh số nhưng vẫn tự động chui vào mục lục
 \newcommand{\chapterwithtoc}[1]{%
-  \chapter*{\centering #1}%
+  \chapter*{#1}%
   \addcontentsline{toc}{chapter}{#1}%
-}
-
-% Tự động hóa danh mục từ viết tắt bằng gói lệnh datatool
-\usepackage{datatool}
-\DTLnewdb{abbreviations} % Đặt tên kho chứa dữ liệu ảo bằng danh từ số nhiều
-
-% Lệnh nạp từ viết tắt vào kho (Chuẩn đặt tên khởi tạo dữ liệu)
-\newcommand{\addabbreviation}[2]{%
-  \DTLnewrow{abbreviations}%
-  \DTLnewdbentry{abbreviations}{key}{#1}%
-  \DTLnewdbentry{abbreviations}{description}{#2}%
-}
-
-% Lệnh tự động sắp xếp và in danh mục ra tệp PDF (Đã sửa lỗi lệch tâm)
-\usepackage{varwidth}
-\newcommand{\printabbreviations}{%
-  \DTLsort{key}{abbreviations}% Sắp xếp các từ viết tắt theo thứ tự bảng chữ cái ABC
-  \begin{center}
-    \renewcommand{\arraystretch}{1.3} % Tạo khoảng cách thoáng giữa các dòng bảng
-    \begin{tabular}{@{} l @{\hspace{1.5cm}} l @{}} % Trả về cột l để hệ thống tự tính kích thước thực tế
-      \DTLforeach{abbreviations}{\thekey=key,\thedescription=description}{%
-        \thekey & \begin{varwidth}{10cm}\thedescription\end{varwidth} \\ % Giới hạn tối đa 10cm, ngắn hơn tự co lại
-      }%
-    \end{tabular}
-  \end{center}
 }
