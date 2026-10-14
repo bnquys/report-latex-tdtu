@@ -3,8 +3,9 @@
 This repository is built upon the original **[Master Thesis Template for TDTU version Vietnamese](https://www.overleaf.com/latex/templates/master-thesis-templete-for-tdtu-version-vietnamese/phrsbqgqvqch)** hosted on Overleaf.
 
 <p align="center">
-  <img src="https://i.ibb.co/k2bfQTJP/img-demo-1.jpg" alt="Trang bìa" border="0" width="49%">
-  <img src="https://i.ibb.co/XZjs98zY/img-demo-2.jpg" alt="Mục lục" border="0" width="49%">
+  <img src="https://i.ibb.co/k2bfQTJP/img-demo-1.jpg" alt="Trang bìa" border="0" width="33%">
+  <img src="https://i.ibb.co/XZjs98zY/img-demo-2.jpg" alt="Mục lục" border="0" width="33%">
+  <img src="https://i.ibb.co/vCLDPSFS/11.jpg" alt="Nội dung" border="0" width="33%">
 </p>
 
 ## Recommended Setup
