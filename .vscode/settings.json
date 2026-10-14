@@ -120,7 +120,15 @@
         }
     ],
     "latex-workshop.latex.recipes": [
-
+        {
+            "name": "pdflatex -> biber -> pdflatex * 2",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
         {
             "name": "latexmk",
             "tools": [
@@ -143,15 +151,6 @@
             "name": "latexmk (xelatex)",
             "tools": [
                 "xelatexmk"
-            ]
-        },
-        {
-            "name": "pdflatex -> biber -> pdflatex * 2",
-            "tools": [
-                "pdflatex",
-                "biber",
-                "pdflatex",
-                "pdflatex"
             ]
         },
         {
